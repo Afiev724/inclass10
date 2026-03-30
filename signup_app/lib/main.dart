@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screens/welcome_screen.dart';
+import 'screens/signup_screen.dart';
 
 void main() {
   runApp(const SignupAdventureApp());
@@ -13,6 +14,9 @@ class SignupAdventureApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const WelcomeScreen(),
+      routes: {
+        '/signup': (context) => const SignupPage(),
+      },
     );
   }
 }

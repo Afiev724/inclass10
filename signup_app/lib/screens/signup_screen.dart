@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:signup_app/screens/welcome_screen.dart';
+import 'package:signup_app/screens/success_screen.dart';
 
 void main() {
   runApp(const SignupAdventureApp());
@@ -205,14 +206,13 @@ class _SignupPageState extends State<SignupPage> {
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('Welcome! Account created successfully.'),
-                        backgroundColor: Colors.green,
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SuccessScreen(userName: _nameController.text),
                       ),
                     );
                   }
-                
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.purple,
