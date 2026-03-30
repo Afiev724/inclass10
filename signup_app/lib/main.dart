@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'screens/success_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,7 +29,7 @@ class SignupPage extends StatefulWidget {
 class _SignupPageState extends State<SignupPage> {
   // 🔑 The Global Key - acts like a remote control for the form
   final _formKey = GlobalKey<FormState>();
-  
+
   // 📝 Controllers to track what the user types
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
@@ -36,14 +37,16 @@ class _SignupPageState extends State<SignupPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold( // 👨 Parent
+    return Scaffold(
+      // 👨 Parent
       appBar: AppBar(
         title: const Text('Join Us Today for the Cash Money!'),
         backgroundColor: Colors.purple,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Form( // 👶 Child
+        child: Form(
+          // 👶 Child
           key: _formKey,
           child: Column(
             children: [
@@ -52,7 +55,7 @@ class _SignupPageState extends State<SignupPage> {
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 20),
-              
+
               // 👤 Name Field
               TextFormField(
                 controller: _nameController,
@@ -69,7 +72,7 @@ class _SignupPageState extends State<SignupPage> {
                 },
               ),
               const SizedBox(height: 16),
-              
+
               // 📧 Email Field
               TextFormField(
                 controller: _emailController,
@@ -89,7 +92,7 @@ class _SignupPageState extends State<SignupPage> {
                 },
               ),
               const SizedBox(height: 16),
-              
+
               // 🔒 Password Field
               TextFormField(
                 controller: _passwordController,
@@ -108,9 +111,8 @@ class _SignupPageState extends State<SignupPage> {
                   }
                   return null;
                 },
-
               ),
-              const SizedBox(height: 24), 
+              const SizedBox(height: 24),
 
               // Confirm Password Field
               TextFormField(
@@ -144,12 +146,12 @@ class _SignupPageState extends State<SignupPage> {
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.purple,
-                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 40,
+                    vertical: 12,
+                  ),
                 ),
-                child: const Text(
-                  'Sign Up',
-                  style: TextStyle(fontSize: 18),
-                ),
+                child: const Text('Sign Up', style: TextStyle(fontSize: 18)),
               ),
             ],
           ),
